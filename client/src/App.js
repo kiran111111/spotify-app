@@ -1,12 +1,26 @@
-import React from 'react';
-import logo from './logo.svg';
+import React,{useState,useEffect} from 'react';
 import './App.css';
-import MapContainer from "./components/Map/Map"
+import Profile from "./Components/Profile/Profile"
+import {token as accesstoken} from "./spotify";
+
 
 function App() {
+
+  const [token,setToken]  = useState("");
+
+  useEffect(() => {
+    setToken(accesstoken)
+  })
+
   return (
     <div className="App">
-      <MapContainer />
+       {token ? 
+          <Profile /> 
+       :
+          <div className="login">
+          <a href={"http://localhost:5000/login"} > Log In</a>
+          </div>
+        }
     </div>
   );
 }
