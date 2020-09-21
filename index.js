@@ -34,7 +34,8 @@ app.use('/',router);
 const authUrl = "https://accounts.spotify.com/authorize";
 const CLIENT_ID = "3e287836f844456cb5e3e19ceba464da";
 const CLIENT_SECRET = "25c3d672592b4140b1794dcc03c39a61";
-const REDIRECT_URI = "http://localhost:3000/";
+const REDIRECT_URI = "http://localhost:5000/callback";
+const FRONTEND_URI = "http://localhost:3000"
 
 const scopes = [
  "user-read-currently-playing",
@@ -63,9 +64,11 @@ const postUri = "https://accounts.spotify.com/api/token";
 const grant = "authorization_code";
 
 
-app.get('/token', function (req, res) {
+app.get('/callback', function (req, res) {
 
- const token = req.headers.token;
+ // const token = req.headers.token;
+
+ const token = req.query.code || null;
 
  const authOptions = {
   url: 'https://accounts.spotify.com/api/token',
@@ -83,13 +86,19 @@ app.get('/token', function (req, res) {
 };
 
 
-     request.post(authOptions,(err,res,body)=>{
-      if(err){
-       console.log(err)
-      }
+    request.post(authOptions, function (error, response, body) {
+       const access_token = body.access_token;
+       const refresh_token = body.refresh_token;
+
        console.log(body)
-       console.log(res.refresh_token)
-     })
+       // we can also pass the token to the browser to make requests from there
+       res.redirect(
+         `${FRONTEND_URI}/#${querystring.stringify({
+           access_token,
+           refresh_token,
+         })}`,
+       );
+     });
  
  });
 

@@ -1,10 +1,10 @@
 
 export const getHashParams = () =>{
     
+   const access_token = window.location.hash && window.location.hash.split("&")[0].split("=")[1];
+   const refresh_token = window.location.hash && window.location.hash.split("&")[1].split("=")[1];
 
- const query = window.location.search.split("&")[0].split("=")[1];
+   console.log(access_token)
+   return {access_token,refresh_token};
 
- console.log(query)
-
- return {token : query}
 }
