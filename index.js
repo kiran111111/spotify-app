@@ -38,11 +38,7 @@ const REDIRECT_URI = "http://localhost:5000/callback";
 const FRONTEND_URI = "http://localhost:3000"
 
 const scopes = [
- "user-read-currently-playing",
- "user-read-recently-played",
- "user-read-playback-state",
- "user-top-read",
- "user-modify-playback-state",
+ 'user-read-private user-read-email user-read-recently-played user-top-read user-follow-read user-follow-modify playlist-read-private playlist-read-collaborative playlist-modify-public'
 ];
 
 
