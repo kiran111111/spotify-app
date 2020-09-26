@@ -1,5 +1,69 @@
 
+:root {
+ --spotify-home-color :#1DB954;
+ --spotify-symbol-color : #9B9B9B;
+}
+
 
 .navbar{
- 
+  background-color:  black;
+  position: fixed;
+  width:100px;
+  top:0;
+  left:0;
+  min-height:100vh;
+  display:flex;
+  flex-direction: column;
 }
+
+.navLogo{
+ display: flex;
+ justify-content: center;
+ padding-top:1rem;
+ padding-bottom: 7rem;
+}
+
+
+.spotify__logo{
+ font-size:3.7rem;
+ color:var(--spotify-home-color);
+}
+
+
+.navMenu{
+ color:white;
+ display :flex;
+ padding:0;
+ flex-direction: column;
+}
+
+.navMenu li {
+   list-style-type: none;
+   text-align: center;
+}
+
+.navMenu li a{
+ display: block;
+ transition: 0.2s all ease;
+ width:95px;
+ padding:1rem 0;
+ color:var(--spotify-symbol-color);
+ border-left: 5px solid black;
+}
+
+.navMenu li a:hover{
+ border-left: 5px solid var(--spotify-home-color);
+ background-color: rgb(24, 24, 24);
+ width:95px;
+ cursor: pointer;
+}
+
+.navMenu li div{
+ font-size: 0.7rem;;
+}
+
+.symbols{
+ color:var(--spotify-symbol-color);
+ font-size:1.4rem;
+}
+

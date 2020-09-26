@@ -1,5 +1,6 @@
 import React,{useState,useEffect} from 'react';
 import './App.css';
+import {Router, Route} from "react-router";
 import Profile from "./Components/Profile/Profile"
 import {token as accesstoken} from "./spotify";
 

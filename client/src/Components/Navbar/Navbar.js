@@ -2,6 +2,7 @@ import React from 'react';
 import {FaItunesNote , FaUser ,FaHistory } from "react-icons/fa";
 import {GiMicrophone} from "react-icons/gi";
 import {RiPlayListFill , RiSpotifyFill} from "react-icons/ri";
+import "./Navbar.css";
 
 export default function Navbar() {
  return (
@@ -9,30 +10,40 @@ export default function Navbar() {
 
    <div className="navLogo">
     <a href="/">
-     <RiSpotifyFill />
+     <RiSpotifyFill className="spotify__logo" />
     </a>
    </div>
 
    <ul className="navMenu">
     <li className="navMenu__item">
-     <FaUser />
-     <div>Profile</div>
+      <a>
+        <FaUser  className="symbols"/>
+        <div>Profile</div>
+     </a>
     </li>
     <li className="navMenu__item">
-     <GiMicrophone />
+    <a>
+     <GiMicrophone className="symbols" />
      <div>Top Artists</div>
+     </a>
     </li>
     <li className="navMenu__item">
-     <FaItunesNote />
+    <a>
+     <FaItunesNote className="symbols" />
      <div>Top Tracks</div>
+     </a>
     </li>
     <li className="navMenu__item">
-      <FaHistory />
+    <a>
+      <FaHistory className="symbols" />
        <div>Recent</div>
+       </a>
     </li>
     <li className="navMenu__item">
-      <RiPlayListFill />
+    <a>
+      <RiPlayListFill className="symbols" />
       <div>Playlits</div>
+      </a>
     </li>
    </ul>
      

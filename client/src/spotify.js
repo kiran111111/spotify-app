@@ -19,7 +19,9 @@ const headers = {
 
 
 // get user details
+// use this function for displaying  the details on home page.
 export const getUser = () => axios.get('https://api.spotify.com/v1/me', { headers });
+
 
 //Get a List of Currnt User's Playlists
 export const getPlaylists = () => axios.get('https://api.spotify.com/v1/me/playlists', { headers });
@@ -35,13 +37,18 @@ export const getRecentlyPlayed = () =>
 //get list of followed artists: 
 export const getFollowing = () =>
   axios.get('https://api.spotify.com/v1/me/following?type=artist', { headers });
-
-
+ 
+  
 // get the users top tracks:
 export const getTopTracksLong = () =>
  axios.get('https://api.spotify.com/v1/me/top/tracks?limit=50&time_range=long_term', { headers });
 
 
+// get the top artists checked by user
+export const getTopArtistsLong = () =>
+ axios.get('https://api.spotify.com/v1/me/top/artists?limit=50&time_range=long_term', { headers });
 
-getTopTracksLong()
-.then(res => {console.log({results :res.data})})
+
+
+
+
