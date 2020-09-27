@@ -5,7 +5,6 @@ class Audio extends React.Component {
 
  render(){
 
-  console.log(this.props.getTopList)
 
    return (
     <div className="audio__container">

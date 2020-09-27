@@ -3,6 +3,7 @@ import {FaItunesNote , FaUser ,FaHistory } from "react-icons/fa";
 import {GiMicrophone} from "react-icons/gi";
 import {RiPlayListFill , RiSpotifyFill} from "react-icons/ri";
 import "./Navbar.css";
+import {Link, NavLink} from "react-router-dom";
 
 export default function Navbar() {
  return (
@@ -16,31 +17,31 @@ export default function Navbar() {
 
    <ul className="navMenu">
     <li className="navMenu__item">
-      <a>
+     <NavLink to="/">
         <FaUser  className="symbols"/>
         <div>Profile</div>
-     </a>
+     </NavLink>
     </li>
     <li className="navMenu__item">
-    <a>
+    <NavLink to="/artists">
      <GiMicrophone className="symbols" />
      <div>Top Artists</div>
-     </a>
+     </NavLink>
     </li>
     <li className="navMenu__item">
-    <a>
+    <a href="/tracks">
      <FaItunesNote className="symbols" />
      <div>Top Tracks</div>
      </a>
     </li>
     <li className="navMenu__item">
-    <a>
+    <a href="/recents">
       <FaHistory className="symbols" />
        <div>Recent</div>
        </a>
     </li>
     <li className="navMenu__item">
-    <a>
+    <a href="/playlist">
       <RiPlayListFill className="symbols" />
       <div>Playlits</div>
       </a>

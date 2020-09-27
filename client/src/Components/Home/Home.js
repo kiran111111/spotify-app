@@ -2,6 +2,7 @@ import React,{useState} from 'react';
 import "./Home.css";
 import  Audio from "./Audio/Audio";
 import Track from "./Audio/Track";
+import {Redirect} from "react-router-dom";
 import {getUser,getFollowing,getTopArtistsLong,getTopTracksLong} from "../../spotify"
 
 class Home extends React.Component {
@@ -18,6 +19,7 @@ class Home extends React.Component {
   }
 
   this.handleUser = this.handleUser.bind(this);
+  this.handleLogout = this.handleLogout.bind(this);
  }
 
 
@@ -49,12 +51,22 @@ class Home extends React.Component {
 
 
   getTopTracksLong().then(res=>{
-   console.log(res.data)
    this.setState({
      tracks : res.data.items
    })
   })
 
+ }
+
+
+
+//  logout
+ handleLogout(){
+   console.log("remove the token")
+   localStorage.removeItem("token")
+  console.log(this.props)
+  this.props.history.push("/")
+   window.location.reload()
  }
 
 
@@ -86,7 +98,7 @@ render(){
      </ul>
 
      <div>
-      <button className="spotify__button"> <a href="/">Logout</a> </button>
+      <button className="spotify__button"> <a onClick={()=>this.handleLogout()}>Logout</a> </button>
      </div>
     </div>
    </div>

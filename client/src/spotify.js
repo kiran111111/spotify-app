@@ -8,8 +8,10 @@ export const getAccessToken = () => {
 }
         
 // get the token from the url;
-export const token = getAccessToken();
+export const token = localStorage.getItem("token")  ? localStorage.getItem("token") :  getAccessToken();
 console.log(token)
+
+
 
 // headers to pass in user requests
 const headers = {

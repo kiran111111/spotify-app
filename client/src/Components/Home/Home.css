@@ -197,7 +197,7 @@
  text-decoration: none;
  display: grid;
  grid-template-columns: auto 1fr;
-    margin-bottom: 5px;
+ margin-bottom: 5px;
 }
 
 
@@ -227,7 +227,7 @@ text-decoration:none
 
 .track__desc{
  position: relative;
- top:5px;
+ top:0px;
  left:10px;
  color:white;;
 }
@@ -235,7 +235,7 @@ text-decoration:none
 .track__descmore{
  color:rgba(255, 255, 255, 0.445);
  position: relative;
- top:-7px;
+ top:-14px;
  left:10px;
  text-decoration:none;
 }
@@ -245,3 +245,6 @@ text-decoration:none
  color:rgba(255, 255, 255, 0.384);
  top:15px;
 }
+
+
+ 
